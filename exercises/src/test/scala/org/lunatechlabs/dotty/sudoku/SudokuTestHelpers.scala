@@ -11,9 +11,13 @@ trait SudokuTestHelpers {
   def stringToIndexedUpdate(stringDef: Vector[String]): CellUpdates = {
     for {
       (cellString, index) <- stringDef.zipWithIndex if cellString != ""
-    } yield (index, cellString.replaceAll(" ", "").map { _.toString.toInt }.toSet)
+    } yield (
+      index,
+      cellString.replaceAll(" ", "").map { _.toString.toInt }.toSet
+    )
   }
 
-  def applyReductionRules(reductionSet: ReductionSet): ReductionSet = reductionSet.applyReductionRuleOne.applyReductionRuleTwo
+  def applyReductionRules(reductionSet: ReductionSet): ReductionSet =
+    reductionSet.reductionRuleOne.reductionRuleTwo
 
 }

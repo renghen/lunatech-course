@@ -1,8 +1,8 @@
 package org.lunatechlabs.dotty.sudoku
 
-object ReductionRules {
+extension on (reductionSet: ReductionSet) {
 
-  def reductionRuleOne(reductionSet: ReductionSet): ReductionSet = {
+  def reductionRuleOne: ReductionSet = {
     val inputCellsGrouped = reductionSet.filter(_.size <= 7).groupBy(identity)
     val completeInputCellGroups = inputCellsGrouped.filter {
       (set, setOccurrences) => set.size == setOccurrences.length
@@ -16,7 +16,7 @@ object ReductionRules {
     }
   }
 
-  def reductionRuleTwo(reductionSet: ReductionSet): ReductionSet = {
+  def reductionRuleTwo: ReductionSet = {
     val valueOccurrences = CELLPossibleValues.map { value =>
       cellIndexesVector.zip(reductionSet).foldLeft(Vector.empty[Int]) {
         case (acc, (index, cell)) =>
