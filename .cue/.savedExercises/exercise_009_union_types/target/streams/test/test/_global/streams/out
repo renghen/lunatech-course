@@ -1,9 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.lunatechlabs.dotty.sudoku.CellMappingSuite, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.lunatechlabs.dotty.sudoku.SudokuDetailProcessorSuite, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(org.lunatechlabs.dotty.sudoku.ReductionRuleSuite, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mSummary for munit not available.[0m
-[0m[[0m[0minfo[0m] [0m[0mPassed: Total 11, Failed 0, Errors 0, Passed 11[0m
-[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org.lunatechlabs.dotty.sudoku.ReductionRuleSuite[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org.lunatechlabs.dotty.sudoku.SudokuDetailProcessorSuite[0m
-[0m[[0m[0mdebug[0m] [0m[0m	org.lunatechlabs.dotty.sudoku.CellMappingSuite[0m

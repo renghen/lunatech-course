@@ -1,4 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/renghen/workspace/lunatech-course/exercises/src/main/resources/application.conf,/home/renghen/workspace/lunatech-course/exercises/target/scala-0.25/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/renghen/workspace/lunatech-course/exercises/src/main/resources/logback.xml,/home/renghen/workspace/lunatech-course/exercises/target/scala-0.25/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/renghen/workspace/lunatech-course/exercises/src/main/resources/sudokusolver.conf,/home/renghen/workspace/lunatech-course/exercises/target/scala-0.25/classes/sudokusolver.conf)[0m
