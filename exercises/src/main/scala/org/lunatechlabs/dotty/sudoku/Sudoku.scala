@@ -82,7 +82,7 @@ implicit class SudokuFieldOps(val sudokuField: SudokuField) extends AnyVal {
       .zipWithIndex
       .filter(_._1.nonEmpty)
       .map {
-        case (c, i) =>
+        (c, i) =>
           RowUpdate(i, c.map(_.swap))
       }
 }
