@@ -38,12 +38,12 @@ object SudokuDetailProcessor {
     }
 
   trait UpdateSender[A] {
-    def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit sender: ActorRef[Response]
+    def sendUpdate(id: Int, cellUpdates: CellUpdates)(using sender: ActorRef[Response]
     ): Unit
     def processorName(id: Int): String
   }
 
-  given rowUpdateSender as UpdateSender[Row] = new UpdateSender[Row] {
+  given UpdateSender[Row] = new UpdateSender[Row] {
     def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
         sender: ActorRef[Response]
     ): Unit =
@@ -51,7 +51,7 @@ object SudokuDetailProcessor {
     def processorName(id: Int): String = s"row-processor-$id"
   }
 
-  given columnUpdateSender as UpdateSender[Column] =
+  given UpdateSender[Column] =
     new UpdateSender[Column] {
       def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
@@ -60,7 +60,7 @@ object SudokuDetailProcessor {
       def processorName(id: Int): String = s"col-processor-$id"
     }
 
-  given blockUpdateSender as UpdateSender[Block] =
+  given UpdateSender[Block] =
     new UpdateSender[Block] {
       def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
@@ -96,16 +96,11 @@ class SudokuDetailProcessor[
             replyTo ! SudokuDetailUnchanged
             Behaviors.same
           } else {
+            given ActorRef[Response] = replyTo
+           // updateSender.sendUpdate(id, stateChanges(state, transformedUpdatedState))
             val updateSender = summon[UpdateSender[DetailType]]
-            updateSender.sendUpdate(
-              id,
-              stateChanges(state, transformedUpdatedState)
-            )(replyTo)
-            operational(
-              id,
-              transformedUpdatedState,
-              isFullyReduced(transformedUpdatedState)
-            )
+            updateSender.sendUpdate(id, stateChanges(state, transformedUpdatedState))//(using replyTo)
+            operational(id, transformedUpdatedState, isFullyReduced(transformedUpdatedState))
           }
         }
 
