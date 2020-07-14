@@ -1,0 +1,5 @@
+#Successful Tests
+#Tue Jul 14 17:13:57 GMT 2020
+org.lunatechlabs.dotty.sudoku.CellMappingSuite=1594746836981
+org.lunatechlabs.dotty.sudoku.ReductionRuleSuite=1594746837389
+org.lunatechlabs.dotty.sudoku.SudokuDetailProcessorSuite=1594746837376
