@@ -135,3 +135,5 @@ Starting thread that pumps server stdout and redirects it to the client stdout..
 2020.07.14 12:07:26 INFO  time: connected to build server in 0.41s
 2020.07.14 12:07:26 INFO  Connected to Build server v1.4.3
 2020.07.14 12:07:28 INFO  time: indexed workspace in 1.58s
+2020.07.14 12:11:52 INFO  no build target: using presentation compiler with only scala-library
+2020.07.14 12:12:00 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/SudokuSolverMain.scala

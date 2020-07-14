@@ -1,5 +1,18 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E040] Syntax Error: /home/renghen/workspace/lunatech-course/lunatech-scala-2-to-scala3-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala:171:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m171 |[0m  [33mprivate[0m [33mdef[0m checkHaha(s: String) {[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                   [31m^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                   '=' expected, but '{' found[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m-- Migration Warning: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala:171:35 [0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m171 |[0m  [33mprivate[0m [33mdef[0m checkHaha(s: String) {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |                                   [33m^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |Procedure syntax no longer supported; `: Unit =` should be inserted here[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m-- Migration Warning: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala:172:15 [0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m172 |[0m    [33mval[0m [36mhaha[0m = [31m'Haha[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |               [33m^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    | symbol literal 'Haha is no longer supported,[0m
+[0m[[0m[33mwarn[0m] [0m[0m    | use a string literal "Haha" or an application Symbol("Haha") instead,[0m
+[0m[[0m[33mwarn[0m] [0m[0m    | or enclose in braces '{Haha} if you want a quoted expression.[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m-- Migration Warning: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala:173:17 [0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m173 |[0m    [33mval[0m [36mnoHaha[0m = [31m'NoHaha[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |                 [33m^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |symbol literal 'NoHaha is no longer supported,[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |use a string literal "NoHaha" or an application Symbol("NoHaha") instead,[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |or enclose in braces '{NoHaha} if you want a quoted expression.[0m
+[0m[[0m[0minfo[0m] [0m[0m[patched file /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala][0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

@@ -9,3 +9,7 @@ exit
 clean
 compile
 exit
+reload
+compile
+reload
+compile
