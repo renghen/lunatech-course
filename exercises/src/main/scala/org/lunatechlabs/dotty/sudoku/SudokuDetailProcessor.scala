@@ -38,12 +38,12 @@ object SudokuDetailProcessor {
     }
 
   trait UpdateSender[A] {
-    def sendUpdate(id: Int, cellUpdates: CellUpdates)(sender: ActorRef[Response]
+    def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit sender: ActorRef[Response]
     ): Unit
     def processorName(id: Int): String
   }
 
-  implicit val rowUpdateSender: UpdateSender[Row] = new UpdateSender[Row] {
+  given rowUpdateSender as UpdateSender[Row] = new UpdateSender[Row] {
     def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
         sender: ActorRef[Response]
     ): Unit =
@@ -51,7 +51,7 @@ object SudokuDetailProcessor {
     def processorName(id: Int): String = s"row-processor-$id"
   }
 
-  implicit val columnUpdateSender: UpdateSender[Column] =
+  given columnUpdateSender as UpdateSender[Column] =
     new UpdateSender[Column] {
       def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
@@ -60,7 +60,7 @@ object SudokuDetailProcessor {
       def processorName(id: Int): String = s"col-processor-$id"
     }
 
-  implicit val blockUpdateSender: UpdateSender[Block] =
+  given blockUpdateSender as UpdateSender[Block] =
     new UpdateSender[Block] {
       def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
