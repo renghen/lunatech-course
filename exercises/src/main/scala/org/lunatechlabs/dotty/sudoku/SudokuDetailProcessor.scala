@@ -65,13 +65,13 @@ class SudokuDetailProcessor[DetailType <: SudokoDetailType: UpdateSender] privat
       case Update(cellUpdates, replyTo) if !fullyReduced =>
         val previousState = state
         val updatedState = mergeState(state, cellUpdates)
-        if updatedState == previousState && cellUpdates != cellUpdatesEmpty then {
+        if (updatedState == previousState && cellUpdates != cellUpdatesEmpty) {
           replyTo ! SudokuDetailUnchanged
           Behaviors.same
         }
         else {
           val transformedUpdatedState = reductionRuleTwo(reductionRuleOne(updatedState))
-          if transformedUpdatedState == state then {
+          if (transformedUpdatedState == state) {
             replyTo ! SudokuDetailUnchanged
             Behaviors.same
           }

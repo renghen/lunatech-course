@@ -24,5 +24,5 @@ val rewriteToOldSyntax =
 
 // scalacOptions ++= rewriteToNewSyntax
 // scalacOptions ++= rewriteToIndentBasedSyntax
-scalacOptions ++= rewriteToNonIndentBasedSyntax
-// scalacOptions ++= rewriteToOldSyntax
+// scalacOptions ++= rewriteToNonIndentBasedSyntax
+scalacOptions ++= rewriteToOldSyntax
