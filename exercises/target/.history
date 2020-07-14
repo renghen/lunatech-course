@@ -1,0 +1,11 @@
+listExercises
+test
+runSolver
+nextExercise
+pullTemplate scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala
+ga -A
+git add -A
+exit
+clean
+compile
+exit

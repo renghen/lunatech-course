@@ -1,0 +1,4 @@
+[debug] [scala-2-to-scala-3] Classpath dependencies List()
+[debug] [scala-2-to-scala-3] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'scala-2-to-scala-3' to '/home/renghen/workspace/lunatech-course/lunatech-scala-2-to-scala3-course/.bloop/scala-2-to-scala-3.json'
+[success] Generated .bloop/scala-2-to-scala-3.json
