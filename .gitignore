@@ -1,5 +1,6 @@
 /.idea/
 /.metals/
+/.cue/
 *.iml
 
 /target
