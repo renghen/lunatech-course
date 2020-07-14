@@ -14,9 +14,9 @@ val cellUpdatesEmpty = Vector.empty[(Int, Set[Int])]
 
 import SudokuDetailProcessor.RowUpdate
 
-implicit class RowUpdatesToSudokuField(val update: Vector[SudokuDetailProcessor.RowUpdate]) extends AnyVal {
-  import scala.language.implicitConversions
-  def toSudokuField: SudokuField = {
+extension {
+  def (update: Vector[SudokuDetailProcessor.RowUpdate]).toSudokuField: SudokuField ={
+    import scala.language.implicitConversions
     val rows =
       update
         .map { case SudokuDetailProcessor.RowUpdate(id, cellUpdates) => (id, cellUpdates)}
@@ -30,7 +30,7 @@ implicit class RowUpdatesToSudokuField(val update: Vector[SudokuDetailProcessor.
   }
 }
 
-implicit class SudokuFieldOps(val sudokuField: SudokuField) extends AnyVal {
+extension on (sudokuField: SudokuField) {
   def transpose: SudokuField = SudokuField(sudokuField.sudoku.transpose)
 
   def rotateCW: SudokuField = SudokuField(sudokuField.sudoku.reverse.transpose)
@@ -79,4 +79,5 @@ implicit class SudokuFieldOps(val sudokuField: SudokuField) extends AnyVal {
         RowUpdate(i, c.map(_.swap))
       }
   }
+
 }
