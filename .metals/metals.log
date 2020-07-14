@@ -180,3 +180,4 @@ Starting thread that pumps server stdout and redirects it to the client stdout..
 2020.07.14 15:02:20 INFO  time: indexed workspace in 1.83s
 2020.07.14 15:02:20 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala
 2020.07.14 15:02:20 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala
+2020.07.14 15:08:05 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuIO.scala

@@ -16,15 +16,13 @@ val rewriteToNonIndentBasedSyntax =
     "-rewrite"
   )
 
-
 val rewriteToOldSyntax =
   Seq(
     "-old-syntax",
     "-rewrite"
   )
 
-// scalacOptions ++= rewriteToNewSyntax
+scalacOptions ++= rewriteToNewSyntax
 // scalacOptions ++= rewriteToIndentBasedSyntax
 // scalacOptions ++= rewriteToNonIndentBasedSyntax
 // scalacOptions ++= rewriteToOldSyntax
-  
