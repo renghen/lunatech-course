@@ -36,7 +36,7 @@ object SudokuSolver {
     cellIndexesVector
       .map { index =>
         val detailProcessorName =
-          implicitly[UpdateSender[A]].processorName(index)
+          summon[UpdateSender[A]].processorName(index)
         val detailProcessor =
           context.spawn(SudokuDetailProcessor(index), detailProcessorName)
         (index, detailProcessor)

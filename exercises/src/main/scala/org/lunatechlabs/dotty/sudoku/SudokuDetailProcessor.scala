@@ -29,7 +29,7 @@ object SudokuDetailProcessor {
   def apply[DetailType <: SudokoDetailType](
       id: Int,
       state: ReductionSet = InitialDetailState
-  )(implicit
+  )(using
       updateSender: UpdateSender[DetailType]
   ): Behavior[Command] =
     Behaviors.setup { context =>
@@ -38,14 +38,13 @@ object SudokuDetailProcessor {
     }
 
   trait UpdateSender[A] {
-    def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit
-        sender: ActorRef[Response]
+    def sendUpdate(id: Int, cellUpdates: CellUpdates)(sender: ActorRef[Response]
     ): Unit
     def processorName(id: Int): String
   }
 
   implicit val rowUpdateSender: UpdateSender[Row] = new UpdateSender[Row] {
-    def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit
+    def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
         sender: ActorRef[Response]
     ): Unit =
       sender ! RowUpdate(id, cellUpdates)
@@ -54,7 +53,7 @@ object SudokuDetailProcessor {
 
   implicit val columnUpdateSender: UpdateSender[Column] =
     new UpdateSender[Column] {
-      def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit
+      def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
       ): Unit =
         sender ! ColumnUpdate(id, cellUpdates)
@@ -63,7 +62,7 @@ object SudokuDetailProcessor {
 
   implicit val blockUpdateSender: UpdateSender[Block] =
     new UpdateSender[Block] {
-      def sendUpdate(id: Int, cellUpdates: CellUpdates)(implicit
+      def sendUpdate(id: Int, cellUpdates: CellUpdates)(using
           sender: ActorRef[Response]
       ): Unit =
         sender ! BlockUpdate(id, cellUpdates)
@@ -97,7 +96,7 @@ class SudokuDetailProcessor[
             replyTo ! SudokuDetailUnchanged
             Behaviors.same
           } else {
-            val updateSender = implicitly[UpdateSender[DetailType]]
+            val updateSender = summon[UpdateSender[DetailType]]
             updateSender.sendUpdate(
               id,
               stateChanges(state, transformedUpdatedState)
