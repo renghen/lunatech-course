@@ -181,3 +181,31 @@ Starting thread that pumps server stdout and redirects it to the client stdout..
 2020.07.14 15:02:20 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala
 2020.07.14 15:02:20 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuSolver.scala
 2020.07.14 15:08:05 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuIO.scala
+2020.07.14 15:25:36 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/package.scala
+2020.07.14 15:26:17 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:26:24 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/SudokuDetailProcessor.scala
+2020.07.14 15:26:33 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:26:39 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/package.scala
+2020.07.14 15:27:28 WARN  code navigation does not work for the file '/home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala' because it doesn't belong to a build target.
+2020.07.14 15:27:28 ERROR scalafmt: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala:4: error: expected start of definition
+  private val N = 9
+          ^
+2020.07.14 15:27:28 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:27:43 ERROR scalafmt: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala:4: error: expected class or object definition
+  val N = 9
+  ^
+2020.07.14 15:27:43 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:29:19 ERROR scalafmt: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala:9: error: expected class or object definition
+  type CellContent = Set[Int]
+  ^
+2020.07.14 15:29:19 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:29:23 ERROR scalafmt: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala:10: error: expected class or object definition
+  type CellContent = Set[Int]
+  ^
+2020.07.14 15:29:23 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:29:54 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:30:06 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
+2020.07.14 15:32:00 ERROR scalafmt: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala:3: error: expected class or object definition
+  val N = 9
+  ^
+2020.07.14 15:32:00 WARN  no build target for: /home/renghen/workspace/lunatech-course/exercises/src/main/scala/org/lunatechlabs/dotty/sudoku/Sudoku.scala
