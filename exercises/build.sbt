@@ -1,5 +1,5 @@
 scalacOptions ++=
   Seq(
-    "-source:3.0-migration",
+    "-source:3.1-migration",
     "-rewrite"
   )

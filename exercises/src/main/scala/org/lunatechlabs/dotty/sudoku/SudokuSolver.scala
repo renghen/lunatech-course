@@ -171,6 +171,6 @@ class SudokuSolver private (context: ActorContext[SudokuSolver.Command],
   private def checkHaha(s: String): Unit = {
     val haha = Symbol("Haha")
     val noHaha = Symbol("NoHaha")
-    if (s startsWith haha.name) println(haha.name) else println(noHaha.name)
+    if (s `startsWith` haha.name) println(haha.name) else println(noHaha.name)
   }
 }
