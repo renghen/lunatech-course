@@ -4,14 +4,18 @@ import akka.actor.typed.scaladsl.{ActorContext, Behaviors}
 import akka.actor.typed.{ActorRef, Behavior}
 
 object SudokuProgressTracker {
+   enum Command{
+      case NewUpdatesInFlight(count: Int)
+      case SudokuDetailState(index: Int, state: ReductionSet)
+   }
 
-  sealed trait Command
-  final case class NewUpdatesInFlight(count: Int) extends Command
-  final case class SudokuDetailState(index: Int, state: ReductionSet)
-      extends Command
-  // My responses
-  sealed trait Response
-  final case class Result(sudoku: Sudoku) extends Response
+   // My responses
+ enum Response{
+  case Result(sudoku: Sudoku)
+ }
+ 
+ export Command._
+ export Response._
 
   def apply(
       rowDetailProcessors: Map[Int, ActorRef[SudokuDetailProcessor.Command]],

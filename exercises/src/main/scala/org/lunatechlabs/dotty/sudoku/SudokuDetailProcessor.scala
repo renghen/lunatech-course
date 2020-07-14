@@ -7,22 +7,22 @@ import org.lunatechlabs.dotty.sudoku.SudokuDetailProcessor.UpdateSender
 object SudokuDetailProcessor {
 
   // My protocol
-  sealed trait Command
-  case object ResetSudokuDetailState extends Command
-  final case class Update(cellUpdates: CellUpdates, replyTo: ActorRef[Response])
-      extends Command
-  final case class GetSudokuDetailState(
-      replyTo: ActorRef[SudokuProgressTracker.Command]
-  ) extends Command
+  enum Command {
+    case ResetSudokuDetailState
+    case Update(cellUpdates: CellUpdates, replyTo: ActorRef[Response])
+    case GetSudokuDetailState(replyTo: ActorRef[SudokuProgressTracker.Command])
+  }
 
   // My responses
-  sealed trait Response
-  final case class RowUpdate(id: Int, cellUpdates: CellUpdates) extends Response
-  final case class ColumnUpdate(id: Int, cellUpdates: CellUpdates)
-      extends Response
-  final case class BlockUpdate(id: Int, cellUpdates: CellUpdates)
-      extends Response
-  case object SudokuDetailUnchanged extends Response
+  enum Response{
+    case RowUpdate(id: Int, cellUpdates: CellUpdates)
+    case ColumnUpdate(id: Int, cellUpdates: CellUpdates)
+    case BlockUpdate(id: Int, cellUpdates: CellUpdates)
+    case SudokuDetailUnchanged
+ }
+
+  export Command._
+  export Response._
 
   val InitialDetailState: ReductionSet = cellIndexesVector.map(_ => initialCell)
 
@@ -97,7 +97,6 @@ class SudokuDetailProcessor[
             Behaviors.same
           } else {
             given ActorRef[Response] = replyTo
-           // updateSender.sendUpdate(id, stateChanges(state, transformedUpdatedState))
             val updateSender = summon[UpdateSender[DetailType]]
             updateSender.sendUpdate(id, stateChanges(state, transformedUpdatedState))//(using replyTo)
             operational(id, transformedUpdatedState, isFullyReduced(transformedUpdatedState))
